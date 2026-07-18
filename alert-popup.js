@@ -1,4 +1,4 @@
-const ALERT_URL = "../alert.json";
+const ALERT_URL = "https://trevorwx-alert-service.onrender.com/alert.json";
 
 const popup = document.getElementById("alertPopup");
 const alertType = document.getElementById("alertType");
