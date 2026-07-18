@@ -20,10 +20,10 @@ const themes = {
 };
 
 const sounds = {
-  red: "sounds/tornado warning.wav",
-  darkred: "sounds/Confirmed tornado warning.wav",
-  pink: "sounds/pds tornado warning.wav",
-  purple: "sounds/tornado emergency.wav"
+  red: "sounds/Tornado Warning.wav",
+  darkred: "sounds/Confirmed Tornado Warning.wav",
+  pink: "sounds/PDS Tornado Warning.wav",
+  purple: "sounds/Tornado Emergency.wav"
 };
 
 function applyTheme(color) {
