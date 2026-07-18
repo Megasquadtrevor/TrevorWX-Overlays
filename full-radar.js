@@ -1,4 +1,4 @@
-const ALERT_URL = "../alert.json";
+const ALERT_URL = "https://trevorwx-alert-service.onrender.com/alert.json";
 
 function updateClock() {
   const clock = document.getElementById("clock");
