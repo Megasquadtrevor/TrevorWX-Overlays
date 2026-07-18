@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TrevorWX IRL Storm Chaser Overlay</title>
+
+  <link rel="stylesheet" href="irl-overlay.css">
+</head>
+
+<body>
+
+  <div id="trevorwx-irl-overlay">
+
+    <!-- TOP LEFT BRANDING -->
+    <header class="branding">
+      <div class="brand-name">
+        TREVOR<span>WX</span>
+      </div>
+      <div class="brand-tagline">
+        DIGITAL METEOROLOGIST • CONTENT CREATOR
+      </div>
+    </header>
+
+
+    <!-- TOP CENTER LIVE CHASE -->
+    <div class="chase-status">
+      <span class="live-dot"></span>
+      LIVE STORM CHASE
+    </div>
+
+
+    <!-- TOP RIGHT LIVE STATUS -->
+    <div class="live-status">
+      <div class="live-label">
+        <span class="live-dot"></span>
+        LIVE
+      </div>
+
+      <div class="hq-status">
+        TREVORWX HQ
+        <span>IS ONLINE</span>
+      </div>
+    </div>
+
+
+    <!-- LEFT CHASER PANEL -->
+    <section class="panel chaser-panel">
+
+      <div class="panel-title">
+        📹 LIVE CHASER CAMS
+      </div>
+
+      <div id="chaserList">
+
+        <div class="chaser active">
+          <div>
+            <strong>TREVORWX</strong>
+            <small id="chaserLocation">Location Updating...</small>
+          </div>
+          <span class="live-badge">LIVE</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LEFT MAP PANEL -->
+    <section class="map-panel">
+
+      <div id="mapPlaceholder">
+        LIVE GPS MAP
+      </div>
+
+      <div class="location-bar">
+
+        <div>
+          📍
+          <strong id="currentLocation">
+            LOCATION UPDATING...
+          </strong>
+        </div>
+
+        <div>
+          ELEVATION
+          <strong id="elevation">-- FT</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RIGHT ACTIVE WARNINGS -->
+    <section class="panel warning-panel">
+
+      <div class="panel-title">
+        ⚠ ACTIVE WARNINGS
+      </div>
+
+      <div id="activeWarnings">
+
+        <div class="no-alerts">
+          Monitoring NWS Alerts...
+        </div>
+
+      </div>
+
+      <div class="warning-footer">
+
+        <span>SOURCE: NWS</span>
+
+        <span>
+          TOTAL ACTIVE:
+          <strong id="totalAlerts">0</strong>
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- WEATHER TELEMETRY -->
+    <section class="weather-bar">
+
+      <div class="weather-item">
+        <span>TEMP</span>
+        <strong id="temperature">--°F</strong>
+      </div>
+
+      <div class="weather-item">
+        <span>DEW POINT</span>
+        <strong id="dewPoint">--°F</strong>
+      </div>
+
+      <div class="weather-item">
+        <span>WIND</span>
+        <strong id="windSpeed">-- MPH</strong>
+      </div>
+
+      <div class="weather-item">
+        <span>GUST</span>
+        <strong id="windGust">-- MPH</strong>
+      </div>
+
+      <div class="weather-item">
+        <span>HUMIDITY</span>
+        <strong id="humidity">--%</strong>
+      </div>
+
+      <div class="weather-item">
+        <span>PRESSURE</span>
+        <strong id="pressure">--</strong>
+      </div>
+
+      <div class="weather-item spc">
+
+        <span>SPC OUTLOOK</span>
+
+        <strong id="spcRisk">
+          LOADING
+        </strong>
+
+      </div>
+
+    </section>
+
+
+    <!-- NWS ALERT TICKER -->
+    <section class="alert-ticker">
+
+      <div class="ticker-label">
+        NWS ALERTS
+      </div>
+
+      <div class="ticker-window">
+
+        <div id="tickerText" class="ticker-text">
+          TrevorWX Severe Weather Alert System Online
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BOTTOM SOCIAL BAR -->
+    <footer class="social-bar">
+
+      <div>
+        FOLLOW TREVORWX
+      </div>
+
+      <div>
+        YouTube • Twitch • Discord • X • Instagram • Facebook
+      </div>
+
+      <div class="clock">
+
+        <strong id="currentTime">
+          --:-- --
+        </strong>
+
+        <span id="currentDate">
+          ---
+        </span>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+  <script src="irl-overlay.js"></script>
+
+</body>
+</html>
