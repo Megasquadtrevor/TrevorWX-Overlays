@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrevorWX Full Radar</title>
+  <link rel="stylesheet" href="full-radar.css">
+</head>
+<body>
+  <div class="broadcast">
+
+    <header class="topbar">
+      <div class="brand">TREVORWX <strong>LIVE</strong></div>
+      <div class="topbar-center">LIVE SEVERE WEATHER COVERAGE</div>
+      <div class="status">ON AIR</div>
+    </header>
+
+    <main class="main-area">
+      <section class="radar-main">
+        <div class="panel-label">LIVE RADAR / FORECAST</div>
+      </section>
+    </main>
+
+    <aside class="side-column">
+      <div class="webcam-frame">
+        <div class="live-tag">● LIVE</div>
+        <div class="frame-label">WEBCAM</div>
+      </div>
+
+      <div class="brand-panel">
+        <div class="brand-big">TREVOR<span>WX</span></div>
+        <div class="brand-sub">DIGITAL METEOROLOGIST / CONTENT CREATOR</div>
+      </div>
+
+      <div class="warning-box severe-box">
+        <div class="warning-title">SEVERE WARNINGS</div>
+        <div class="warning-content">
+          <div class="warning-icon">⚠</div>
+          <div class="warning-count">
+            <strong id="severeCount">0</strong>
+            <span>ACTIVE</span>
+            <small>NONE AT THIS TIME</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning-box tornado-box">
+        <div class="warning-title">TORNADO WARNINGS</div>
+        <div class="warning-content">
+          <div class="warning-icon">🌪</div>
+          <div class="warning-count">
+            <strong id="tornadoCount">0</strong>
+            <span>ACTIVE</span>
+            <small>NONE AT THIS TIME</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <section class="forecast-strip">
+      <div class="forecast-title">7-DAY FORECAST</div>
+
+      <div class="forecast-day">
+        <strong>TODAY</strong>
+        <span>90°</span>
+        <small>Mostly Sunny</small>
+      </div>
+
+      <div class="forecast-day">
+        <strong>TONIGHT</strong>
+        <span>67°</span>
+        <small>Storms Possible</small>
+      </div>
+
+      <div class="forecast-day">
+        <strong>TOMORROW</strong>
+        <span>85°</span>
+        <small>Showers / Storms</small>
+      </div>
+
+      <div class="forecast-day">
+        <strong>FRIDAY</strong>
+        <span>84°</span>
+        <small>Scattered Storms</small>
+      </div>
+
+      <div class="forecast-day">
+        <strong>SATURDAY</strong>
+        <span>88°</span>
+        <small>Partly Cloudy</small>
+      </div>
+    </section>
+
+    <footer class="ticker">
+      <div class="ticker-tag">TREVORWX ALERTS</div>
+      <div class="ticker-text" id="tickerText">Monitoring severe weather across the United States.</div>
+      <div class="ticker-time" id="clock">--:--</div>
+    </footer>
+
+  </div>
+
+  <script src="full-radar.js"></script>
+</body>
+</html>
