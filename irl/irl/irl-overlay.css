@@ -1,0 +1,776 @@
+/* =========================================================
+   TREVORWX IRL STORM CHASER OVERLAY
+   Designed for 1920x1080 OBS Browser Source
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+body {
+  position: relative;
+}
+
+#trevorwx-irl-overlay {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+/* =========================
+   BRANDING
+========================= */
+
+.branding {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  z-index: 10;
+  text-shadow: 0 3px 10px #000;
+}
+
+.brand-name {
+  font-size: 58px;
+  line-height: 0.9;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -4px;
+}
+
+.brand-name span {
+  color: #e31919;
+}
+
+.brand-tagline {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ddd;
+}
+
+
+/* =========================
+   TOP CENTER CHASE STATUS
+========================= */
+
+.chase-status {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-width: 340px;
+  padding: 16px 40px;
+
+  text-align: center;
+
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.96),
+      rgba(20, 20, 20, 0.85)
+    );
+
+  border-left: 2px solid #d71920;
+  border-right: 2px solid #d71920;
+  border-bottom: 2px solid #d71920;
+
+  border-radius: 0 0 18px 18px;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.live-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+
+  margin-right: 8px;
+
+  border-radius: 50%;
+
+  background: #ff1515;
+
+  box-shadow:
+    0 0 8px #ff1515,
+    0 0 18px rgba(255, 21, 21, 0.8);
+}
+
+
+/* =========================
+   TOP RIGHT LIVE STATUS
+========================= */
+
+.live-status {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+
+  width: 190px;
+
+  overflow: hidden;
+
+  background: rgba(5, 5, 5, 0.92);
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.65);
+}
+
+.live-label {
+  padding: 8px;
+
+  background: #c90000;
+
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.hq-status {
+  padding: 8px;
+
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hq-status span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #21e34b;
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   GENERAL PANELS
+========================= */
+
+.panel {
+  position: absolute;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 8, 8, 0.94),
+      rgba(15, 15, 15, 0.88)
+    );
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.65);
+}
+
+.panel-title {
+  padding: 10px 14px;
+
+  font-size: 19px;
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(120, 0, 0, 0.95),
+      rgba(20, 20, 20, 0.95)
+    );
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================
+   CHASER PANEL
+========================= */
+
+.chaser-panel {
+  top: 155px;
+  left: 24px;
+
+  width: 360px;
+}
+
+.chaser {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 64px;
+
+  padding: 10px 14px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.chaser strong {
+  display: block;
+
+  font-size: 17px;
+  letter-spacing: 0.5px;
+}
+
+.chaser small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #bbb;
+
+  font-size: 13px;
+}
+
+.chaser.active {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(160, 0, 0, 0.85),
+      rgba(70, 0, 0, 0.65)
+    );
+
+  border-left: 4px solid #ff2424;
+}
+
+.live-badge {
+  padding: 5px 8px;
+
+  border: 1px solid white;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+/* =========================
+   MAP PANEL
+========================= */
+
+.map-panel {
+  position: absolute;
+
+  left: 24px;
+  bottom: 190px;
+
+  width: 460px;
+  height: 285px;
+
+  overflow: hidden;
+
+  background: rgba(5, 5, 5, 0.9);
+
+  border: 2px solid rgba(255, 255, 255, 0.5);
+
+  border-radius: 8px;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+}
+
+#mapPlaceholder {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 215px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 40, 30, 0.9),
+      rgba(15, 25, 20, 0.9)
+    );
+
+  color: #aaa;
+
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.location-bar {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  height: 70px;
+
+  padding: 8px 14px;
+
+  background: rgba(10, 10, 10, 0.97);
+}
+
+.location-bar > div:first-child {
+  font-size: 14px;
+}
+
+.location-bar > div:first-child strong {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 17px;
+}
+
+.location-bar > div:last-child {
+  text-align: right;
+
+  color: #aaa;
+
+  font-size: 11px;
+}
+
+.location-bar > div:last-child strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: white;
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   ACTIVE WARNINGS
+========================= */
+
+.warning-panel {
+  top: 155px;
+  right: 24px;
+
+  width: 500px;
+}
+
+#activeWarnings {
+  max-height: 380px;
+  overflow: hidden;
+}
+
+.no-alerts {
+  padding: 25px;
+
+  text-align: center;
+
+  color: #aaa;
+
+  font-size: 16px;
+}
+
+.warning-item {
+  display: grid;
+
+  grid-template-columns: 75px 1fr 110px;
+
+  align-items: center;
+
+  min-height: 72px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.warning-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.warning-info {
+  padding: 8px 12px;
+}
+
+.warning-info strong {
+  display: block;
+
+  font-size: 16px;
+}
+
+.warning-info span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #ddd;
+
+  font-size: 12px;
+}
+
+.warning-time {
+  padding-right: 12px;
+
+  text-align: right;
+
+  color: #ddd;
+
+  font-size: 12px;
+}
+
+.warning-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 9px 14px;
+
+  background: #080808;
+
+  color: #aaa;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.warning-footer strong {
+  color: #ff3030;
+}
+
+
+/* =========================
+   WEATHER TELEMETRY BAR
+========================= */
+
+.weather-bar {
+  position: absolute;
+
+  left: 500px;
+  right: 24px;
+  bottom: 190px;
+
+  height: 92px;
+
+  display: flex;
+
+  background: rgba(5, 5, 5, 0.94);
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.65);
+}
+
+.weather-item {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+  text-align: center;
+}
+
+.weather-item span {
+  margin-bottom: 5px;
+
+  color: #aaa;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.weather-item strong {
+  font-size: 20px;
+}
+
+.weather-item.spc {
+  min-width: 145px;
+}
+
+.weather-item.spc strong {
+  color: #ff9d00;
+}
+
+
+/* =========================
+   NWS ALERT TICKER
+========================= */
+
+.alert-ticker {
+  position: absolute;
+
+  left: 24px;
+  right: 24px;
+  bottom: 105px;
+
+  height: 64px;
+
+  display: flex;
+
+  overflow: hidden;
+
+  background: rgba(10, 0, 0, 0.96);
+
+  border: 2px solid #a80000;
+
+  border-radius: 7px;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.7);
+}
+
+.ticker-label {
+  display: flex;
+
+  align-items: center;
+
+  min-width: 190px;
+
+  padding: 0 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #b50000,
+      #7d0000
+    );
+
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.ticker-window {
+  position: relative;
+
+  flex: 1;
+
+  overflow: hidden;
+}
+
+.ticker-text {
+  position: absolute;
+
+  top: 50%;
+  left: 100%;
+
+  transform: translateY(-50%);
+
+  white-space: nowrap;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  animation: ticker-scroll 30s linear infinite;
+}
+
+@keyframes ticker-scroll {
+
+  from {
+    transform:
+      translate(0, -50%);
+  }
+
+  to {
+    transform:
+      translate(-2200px, -50%);
+  }
+
+}
+
+
+/* =========================
+   SOCIAL / CLOCK BAR
+========================= */
+
+.social-bar {
+  position: absolute;
+
+  left: 24px;
+  right: 24px;
+  bottom: 22px;
+
+  height: 62px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-left: 18px;
+
+  background: rgba(5, 5, 5, 0.94);
+
+  border: 1px solid #8c0000;
+
+  border-radius: 7px;
+
+  overflow: hidden;
+
+  font-size: 14px;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.7);
+}
+
+.social-bar > div:first-child {
+  color: #aaa;
+
+  font-weight: 800;
+}
+
+.social-bar > div:nth-child(2) {
+  font-size: 15px;
+
+  word-spacing: 10px;
+}
+
+.clock {
+  align-self: stretch;
+
+  min-width: 190px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 15px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #1a1a1a,
+      #080808
+    );
+
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.clock strong {
+  font-size: 19px;
+}
+
+.clock span {
+  margin-top: 3px;
+
+  color: #aaa;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   WARNING COLORS
+========================= */
+
+.warning-tornado {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(170, 0, 0, 0.85),
+      rgba(80, 0, 0, 0.55)
+    );
+}
+
+.warning-confirmed {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(100, 0, 0, 0.95),
+      rgba(45, 0, 0, 0.7)
+    );
+}
+
+.warning-pds {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(210, 0, 95, 0.9),
+      rgba(100, 0, 50, 0.65)
+    );
+}
+
+.warning-emergency {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(105, 0, 180, 0.9),
+      rgba(45, 0, 80, 0.7)
+    );
+}
+
+.warning-severe {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(180, 110, 0, 0.9),
+      rgba(80, 45, 0, 0.65)
+    );
+}
+
+.warning-flood {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 115, 45, 0.9),
+      rgba(0, 55, 25, 0.65)
+    );
+}
+
+
+/* =========================
+   SMALL SCREEN FALLBACK
+========================= */
+
+@media (max-width: 1200px) {
+
+  .branding {
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
+
+  .chaser-panel {
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
+
+  .warning-panel {
+    transform: scale(0.8);
+    transform-origin: top right;
+  }
+
+}
